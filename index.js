@@ -6,9 +6,10 @@ const authRoutes = require('./routes/authRoutes')
 
 //service
 require('./service/passport')
+require('./service/facebookPassport')
 
 //handle routes
-app.use('/auth/google',authRoutes)
+app.use('/auth',authRoutes)
 
 
 
