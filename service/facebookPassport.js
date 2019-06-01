@@ -5,12 +5,13 @@ const keys = require('../config/keys')
 passport.use(new FacebookStrategy({
     clientID: keys.facebookID,
     clientSecret: keys.facebookSecret,
-    callbackURL: "http://localhost:5000/auth/facebook",
-    profileFields: ['id', 'displayName', 'photos', 'email'],
-    enableProof: true
+    callbackURL: "http://localhost:5000/auth/facebook/callback",
+    profileFields:["name", "email", "link", "locale", "timezone"],
+    passReqToCallback: true,
+    enableProof:false
   },
-  function(accessToken, refreshToken, profile, cb) {
+  function(req,accessToken, refreshToken, profile, cb) {
    console.log(profile)
-   console.log(accessToken)
+   console.log(cb)
   }
 ));
