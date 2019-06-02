@@ -10,7 +10,7 @@ require('./service/facebookPassport')
 
 const app = express()
 
-mongoose.connect(keys.mongoDBConnectionStringLocalhost)
+mongoose.connect(keys.mongoDBConnectionString)
 
 app.use(cookieSession({
     maxAge: 5*60*1000,

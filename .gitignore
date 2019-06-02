@@ -1,3 +1,4 @@
 node_modules
 yarn.lock
-keys.js
+dev.js
+package-lock.json
